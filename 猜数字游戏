@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    // let i = Math.floor(Math.random() * 11)
+    // document.write(i)
+
+
+    // 随机点名
+
+    let x = +prompt('请输入数值区间最小的数：')
+    let y = +prompt('请输入数值区间最大的数：')
+
+    //开关变量
+    let flag = true
+    //取到N-M间的随机整数
+    function gerRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1)) + N
+    }
+
+    let i = gerRandom(x, y)//i保存随机生成的数字
+    for (let m = 1; m < 4; i++) {//限定次数只能是3次，猜错结束
+      let n = +prompt(`请输入${x}到${y}之间你猜的数字：`)
+      if (i === n) {
+        flag = false
+        alert('猜对了')
+        break
+      }
+
+      else if (i > n)
+        alert('猜小了，请继续')
+      else if (i < n)
+        alert('猜大了，请继续')
+    }
+
+    if (flag) {//如果猜的次数已经用完了，仍然没猜对，则会提示次数用完并结束
+      alert('次数已用完')
+    }
+
+
+
+  </script>
+</body>
+
+</html>
