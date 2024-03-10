@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    // let i = Math.floor(Math.random() * 11)
+    // document.write(i)
+
+
+    // 随机点名
+    let arr = ['赵云', 'huangzhong', 'guangyu', 'zhangfei', 'machao', 'liubei', 'caochao']
+    //取到N-M间的随机整数
+    function gerRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1)) + N
+    }
+    let i = gerRandom(0, arr.length)//i保存随机生成的下标
+    document.write(arr[i])
+
+
+  </script>
+</body>
+
+</html>
