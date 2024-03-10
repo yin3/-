@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 600px;
+      text-align: center;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+    }
+
+    caption {
+      font-size: s8px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    tr {
+      height: 40px;
+      cursor: pointer;
+    }
+
+    table tr:nth-child(1) {
+      background-color: #ddd;
+
+    }
+
+    table tr:not(:first-child):hover {
+      background-color: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>学生信息</h2>
+  <p>将数据渲染到数据表中</p>
+
+  <table>
+    <caption>学生列表</caption>
+    <tr>
+      <th>序号</th>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+      <th>家乡</th>
+    </tr>
+
+
+    <script>
+      //数据准备
+      let students = [
+        { uname: '小明', age: 18, gender: '男', hometown: '河南' },
+        { uname: '小红', age: 13, gender: '女', hometown: '河北' },
+        { uname: '小刚', age: 28, gender: '男', hometown: '河东' },
+        { uname: '小丽', age: 12, gender: '女', hometown: '河南' },
+      ]
+
+      //渲染页面
+      for (let i = 0; i < students.length; i++) {
+        document.write(`
+          <tr>
+             <th>${i + 1}</th>
+             <th>${students[i].uname}</th>
+             <th>${students[i].age}</th>
+             <th>${students[i].gender}</th>
+             <th>${students[i].hometown}</th>
+          </tr>
+          `)
+      }
+    </script>
+  </table>
+
+    // let obj = {
+    //   uname: 'jeck',
+    //   // 方法
+    //   song: function (x = 0, y = 0) {
+    //     console.log(x, y)
+    //   }
+    // }
+    // // 方法调用 对象名.方法名
+    // obj.song(1, 2)
+    //遍历数组，for in 不推荐
+    // let arr=['pink','red','aaa']
+    // for(let k in arr){
+    //   console.log(k)//数组的下标 索引号 但是字符串‘0’
+    //   console.log(arr[k])//arr[k]
+    //  }
+    // let obj = {
+    //   uname: 'pink',
+    //   age: 34,
+    //   gender: 'male'
+    // }
+    // //for in 遍历对象
+    // for (let key in obj) {
+    //   console.log(key)//k获取对象属性
+    //   // obj.k不能用，k='uname'  obj.k===obj.'uname'
+    //   document.write(obj[key])//输出属性值的方法 obj[k],用中括号
+
+    // }
+    // // 
+
+</body>
+
+</html>
