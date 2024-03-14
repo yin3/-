@@ -156,6 +156,10 @@
       document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
     }
 
+    //定时器函数
+    function timer() {
+
+    }
     next.addEventListener('click', function () {
       // if (i >= 8)
       //   i = 0
@@ -189,6 +193,14 @@
       clearInterval(timeId)
 
     })
+    //鼠标移开开启定时器
+    document.querySelector('.slider').addEventListener('mouseleave', function () {
+      timeId = setInterval(function () {
+        // 利用js自动调用点击事件
+        next.click()
+      }, 1000)
+    }
+    )
 
 
 
